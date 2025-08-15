@@ -176,9 +176,9 @@ export default function Footer() {
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center text-primary-300 text-sm mb-4 md:mb-0">
-              <span>© {currentYear} Abuela Coca. Hecho con</span>
-              <Heart className="w-4 h-4 text-red-500 mx-1 fill-current" />
-              <span>en Río Cuarto, Córdoba</span>
+              <span>© {currentYear} Abuela Coca </span>     
+              <span className="mx-1">•</span> 
+              <span> en Río Cuarto, Córdoba</span>
             </div>
             
             <div className="flex items-center space-x-6 text-sm">

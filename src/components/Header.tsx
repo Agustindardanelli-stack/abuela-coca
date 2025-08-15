@@ -37,8 +37,8 @@ export default function Header() {
               <span className="text-white font-bold text-xl">AC</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-primary-800">Abuela Coca</h1>
-              <p className="text-xs text-primary-600">Sin Gluten • Sin Lactosa</p>
+              <h1 className="text-xl font-semibold text-primary-800">Abuela Coca</h1>
+              <p className="text-xs text-primary-600 font-medium">Sin Gluten • Sin Lactosa</p>
             </div>
           </div>
 
@@ -88,7 +88,7 @@ export default function Header() {
               <Instagram className="w-5 h-5" />
             </a>
             <a 
-              href="wa.link/zoxxs5"
+              href="https://wa.link/zoxx5"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary text-sm"

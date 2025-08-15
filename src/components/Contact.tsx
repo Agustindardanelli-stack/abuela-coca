@@ -10,11 +10,11 @@ export default function Contact() {
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-primary-800 mb-6">
             ¡Conectemos!
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400 font-extrabold">
               Estamos aquí para ti
             </span>
           </h2>
-          <p className="text-xl text-primary-600 max-w-3xl mx-auto">
+          <p className="text-xl text-primary-600 max-w-3xl mx-auto font-medium">
             ¿Tienes alguna pregunta o quieres hacer un pedido? Contáctanos por cualquiera 
             de nuestros canales. ¡Nos encanta ayudarte!
           </p>

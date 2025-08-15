@@ -1,5 +1,12 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import { Poppins } from 'next/font/google'
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-poppins',
+})
 
 export const metadata: Metadata = {
   title: 'Abuela Coca - Dulces Sin Gluten y Sin Lactosa | Río Cuarto',
@@ -58,8 +65,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className="scroll-smooth">
-      <body className="antialiased bg-primary-50 text-primary-900">
+    <html lang="es" className={`scroll-smooth ${poppins.variable}`}>
+      <body className={`antialiased bg-primary-50 text-primary-900 ${poppins.className}`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -84,7 +91,7 @@ export default function RootLayout({
                 "longitude": -64.3497
               },
               "openingHours": "Mo-Fr 09:00-18:00, Sa 09:00-13:00",
-              "priceRange": "$$",
+              "priceRange": "$",
               "servesCuisine": ["Sin Gluten", "Sin Lactosa", "Repostería"],
               "acceptsReservations": "False",
               "sameAs": [

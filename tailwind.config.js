@@ -34,8 +34,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        'serif': ['Georgia', 'serif'],
-        'display': ['Georgia', 'serif'],
+        'sans': ['var(--font-poppins)', 'Poppins', 'system-ui', 'sans-serif'],
+        'display': ['var(--font-poppins)', 'Poppins', 'system-ui', 'sans-serif'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

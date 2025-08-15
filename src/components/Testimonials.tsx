@@ -89,11 +89,11 @@ export default function Testimonials() {
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-primary-800 mb-6">
             Lo que dicen
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400 font-extrabold">
               Nuestros Clientes
             </span>
           </h2>
-          <p className="text-xl text-primary-600 max-w-3xl mx-auto">
+          <p className="text-xl text-primary-600 max-w-3xl mx-auto font-medium">
             Más de 1676 familias confían en nosotros. Lee las experiencias reales 
             de quienes ya disfrutan de nuestros productos sin gluten y sin lactosa.
           </p>

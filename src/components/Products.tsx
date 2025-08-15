@@ -105,11 +105,11 @@ export default function Products() {
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-primary-800 mb-6">
             Nuestros
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400 font-extrabold">
               Productos Artesanales
             </span>
           </h2>
-          <p className="text-xl text-primary-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-primary-600 max-w-3xl mx-auto mb-8 font-medium">
             Cada producto está elaborado con amor y los mejores ingredientes, 
             garantizando que sean 100% libres de gluten y lactosa.
           </p>

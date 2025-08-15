@@ -32,14 +32,14 @@ export default function Hero() {
             {/* Main Heading */}
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-shadow-lg animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
               Dulces con el
-              <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent font-extrabold">
                 Amor de la Abuela
               </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xl lg:text-2xl mb-8 text-white/90 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
-              Elaboración artesanal de alimentos <strong>sin gluten y sin lactosa</strong> 
+            <p className="text-xl lg:text-2xl mb-8 text-white/90 animate-fadeInUp font-medium" style={{ animationDelay: '0.4s' }}>
+              Elaboración artesanal de alimentos <strong className="font-semibold">sin gluten y sin lactosa</strong> 
               en Río Cuarto, Córdoba
             </p>
 
@@ -98,19 +98,19 @@ export default function Hero() {
                       <span className="text-white font-bold text-4xl">AC</span>
                     </div>
                     <h2 className="text-2xl font-bold text-primary-800 mb-2">Abuela Coca</h2>
-                    <p className="text-primary-600 font-medium">Productos artesanales</p>
-                    <p className="text-primary-500 text-sm">Sin gluten • Sin lactosa</p>
+                    <p className="text-primary-600 font-semibold">Productos artesanales</p>
+                    <p className="text-primary-500 text-sm font-medium">Sin gluten • Sin lactosa</p>
                   </div>
                 </div>
               </div>
               
               {/* Floating badges */}
-              {/* <div className="absolute -top-4 -right-4 bg-secondary-500 text-white rounded-full w-16 h-16 flex items-center justify-center animate-bounce-slow">
-                {/* <div className="text-center">
+              <div className="absolute -top-4 -right-4 bg-secondary-500 text-white rounded-full w-16 h-16 flex items-center justify-center animate-bounce-slow">
+                <div className="text-center">
                   <div className="text-lg font-bold">86</div>
                   <div className="text-xs">Posts</div>
-                </div> */}
-              {/* </div> */} 
+                </div>
+              </div>
               
               <div className="absolute -bottom-4 -left-4 bg-green-500 text-white rounded-full w-20 h-20 flex items-center justify-center animate-bounce-slow" style={{ animationDelay: '1s' }}>
                 <div className="text-center">
