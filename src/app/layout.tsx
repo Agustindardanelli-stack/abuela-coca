@@ -9,7 +9,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Abuela Coca - Dulces Sin Gluten y Sin Lactosa | Río Cuarto',
+  title: 'Abuela Coca - Sin Gluten y Sin Lactosa | Río Cuarto',
   description: 'Elaboración artesanal de alimentos sin gluten y sin lactosa en Río Cuarto. Productos caseros con el sabor tradicional de la abuela. Ventas mayoristas y minoristas.',
   keywords: 'sin gluten, sin lactosa, celiacos, intolerantes lactosa, dulces caseros, repostería artesanal, Río Cuarto, Córdoba, Argentina, Abuela Coca, productos naturales, ventas mayoristas, ventas minoristas',
   authors: [{ name: 'Abuela Coca' }],
