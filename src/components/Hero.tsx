@@ -24,10 +24,10 @@ export default function Hero() {
           {/* Text Content */}
           <div className="text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 animate-fadeInUp">
+            {/* <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 animate-fadeInUp">
               <Star className="w-4 h-4 mr-2 text-yellow-300" />
               <span className="text-sm font-medium">1676 seguidores nos eligen</span>
-            </div>
+            </div> */}
 
             {/* Main Heading */}
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-shadow-lg animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
@@ -105,19 +105,19 @@ export default function Hero() {
               </div>
               
               {/* Floating badges */}
-              <div className="absolute -top-4 -right-4 bg-secondary-500 text-white rounded-full w-16 h-16 flex items-center justify-center animate-bounce-slow">
+              {/* <div className="absolute -top-4 -right-4 bg-secondary-500 text-white rounded-full w-16 h-16 flex items-center justify-center animate-bounce-slow">
                 <div className="text-center">
                   <div className="text-lg font-bold">86</div>
                   <div className="text-xs">Posts</div>
                 </div>
-              </div>
+              </div> */}
               
-              <div className="absolute -bottom-4 -left-4 bg-green-500 text-white rounded-full w-20 h-20 flex items-center justify-center animate-bounce-slow" style={{ animationDelay: '1s' }}>
+              {/* <div className="absolute -bottom-4 -left-4 bg-green-500 text-white rounded-full w-20 h-20 flex items-center justify-center animate-bounce-slow" style={{ animationDelay: '1s' }}>
                 <div className="text-center">
                   <div className="text-lg font-bold">1676</div>
                   <div className="text-xs">Seguidores</div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

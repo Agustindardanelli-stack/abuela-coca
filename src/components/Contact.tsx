@@ -215,13 +215,18 @@ export default function Contact() {
               <h3 className="text-2xl font-bold text-primary-800 mb-6">¿Dónde Estamos?</h3>
               
               {/* Placeholder for map */}
-              <div className="w-full h-64 bg-gradient-to-br from-primary-100 to-primary-200 rounded-lg flex items-center justify-center mb-4">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-primary-600 mx-auto mb-3" />
-                  <p className="text-primary-700 font-medium">Luis Reinaudi 1874</p>
-                  <p className="text-primary-600">Río Cuarto, Córdoba</p>
-                </div>
-              </div>
+              <div className="w-full h-64 rounded-lg overflow-hidden mb-4 shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3373.123456789!2d-64.3497!3d-33.1301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d2749c8b5c8c8d%3A0x1234567890abcdef!2sLuis%20Reinaudi%201874%2C%20Río%20Cuarto%2C%20Córdoba!5e0!3m2!1ses!2sar!4v1234567890123!5m2!1ses!2sar"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ubicación Abuela Coca - Luis Reinaudi 1874, Río Cuarto"
+                ></iframe>
+            </div>
               
               <p className="text-sm text-primary-600">
                 📍 Ubicados en el corazón de Río Cuarto, fácil acceso y estacionamiento disponible

@@ -24,70 +24,70 @@ export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState<string>('todos')
 
   const categories: Category[] = [
-    { id: 'todos', name: 'Todos los productos', icon: '🍰' },
-    { id: 'tortas', name: 'Tortas', icon: '🎂' },
-    { id: 'galletas', name: 'Galletas', icon: '🍪' },
-    { id: 'panes', name: 'Panes', icon: '🍞' },
-    { id: 'postres', name: 'Postres', icon: '🧁' }
+    { id: 'todos', name: 'Todos los productos', icon: '🌾' },
+    { id: 'premezclas', name: 'Premezclas', icon: '🥄' },
+    { id: 'universal', name: 'Universal', icon: '⭐' },
+    { id: 'premium', name: 'Premium', icon: '👑' },
+    { id: 'especiales', name: 'Especiales', icon: '✨' }
   ]
 
   const products: Product[] = [
     {
       id: 1,
-      name: 'Torta de Chocolate Sin Gluten',
-      category: 'tortas',
-      description: 'Deliciosa torta de chocolate húmeda, elaborada con harinas sin gluten y sin lactosa.',
-      price: '$3.500',
+      name: 'Premezcla Universal Sin Gluten',
+      category: 'premezclas',
+      description: 'Mezcla perfecta de harinas sin gluten para todo tipo de preparaciones. Ideal para tortas, panes y galletas.',
+      price: '$2.500',
       image: '/api/placeholder/300/300',
       rating: 5,
       popular: true
     },
     {
       id: 2,
-      name: 'Galletas de Avena y Pasas',
-      category: 'galletas',
-      description: 'Crujientes galletas caseras con avena certificada sin gluten y pasas de uva.',
-      price: '$1.800',
+      name: 'Premezcla Universal Premium',
+      category: 'premezclas',
+      description: 'Versión premium de nuestra premezcla, con ingredientes de primera calidad para resultados excepcionales.',
+      price: '$3.200',
       image: '/api/placeholder/300/300',
       rating: 5,
-      popular: false
-    },
-    {
-      id: 3,
-      name: 'Pan Integral Multisemillas',
-      category: 'panes',
-      description: 'Pan integral con semillas de chía, lino y girasol. Perfecto para el desayuno.',
-      price: '$2.200',
-      image: '/api/placeholder/300/300',
-      rating: 4,
       popular: true
     },
     {
-      id: 4,
-      name: 'Brownie de Almendras',
-      category: 'postres',
-      description: 'Brownie húmedo con almendras tostadas, sin gluten y sin lactosa.',
+      id: 3,
+      name: 'Premezcla para Repostería',
+      category: 'premezclas',
+      description: 'Especialmente formulada para repostería fina. Textura suave y sabor neutro.',
       price: '$2.800',
       image: '/api/placeholder/300/300',
       rating: 5,
       popular: false
     },
     {
+      id: 4,
+      name: 'Premezcla para Panes',
+      category: 'premezclas',
+      description: 'Mezcla específica para panes caseros sin gluten. Resultado esponjoso y sabroso.',
+      price: '$2.600',
+      image: '/api/placeholder/300/300',
+      rating: 4,
+      popular: false
+    },
+    {
       id: 5,
-      name: 'Torta Red Velvet',
-      category: 'tortas',
-      description: 'Clásica torta red velvet adaptada para celíacos e intolerantes a la lactosa.',
-      price: '$4.200',
+      name: 'Premezcla Integral',
+      category: 'premezclas',
+      description: 'Con fibras y cereales integrales. Ideal para quienes buscan opciones más nutritivas.',
+      price: '$3.000',
       image: '/api/placeholder/300/300',
       rating: 5,
       popular: true
     },
     {
       id: 6,
-      name: 'Cookies de Chocolate Chip',
-      category: 'galletas',
-      description: 'Cookies suaves con chips de chocolate sin lactosa, irresistibles.',
-      price: '$2.000',
+      name: 'Premezcla Dulce',
+      category: 'premezclas',
+      description: 'Perfecta para postres y preparaciones dulces. Con un toque especial de vainilla.',
+      price: '$2.900',
       image: '/api/placeholder/300/300',
       rating: 4,
       popular: false
@@ -104,14 +104,14 @@ export default function Products() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-primary-800 mb-6">
-            Nuestros
+            Nuestras
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400 font-extrabold">
-              Productos Artesanales
+              Premezclas Sin Gluten
             </span>
           </h2>
           <p className="text-xl text-primary-600 max-w-3xl mx-auto mb-8 font-medium">
-            Cada producto está elaborado con amor y los mejores ingredientes, 
-            garantizando que sean 100% libres de gluten y lactosa.
+            Premezclas universales de alta calidad, perfectas para todas tus preparaciones. 
+            100% libres de gluten y sin lactosa, con el sabor tradicional que buscas.
           </p>
         </div>
 
@@ -151,7 +151,7 @@ export default function Products() {
                 
                 {/* Placeholder para imagen */}
                 <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-200 to-primary-100">
-                  <div className="text-6xl opacity-50">🍰</div>
+                  {/* <div className="text-6xl opacity-50">🌾</div> */}
                 </div>
                 
                 {/* Overlay con botón */}
@@ -224,20 +224,31 @@ export default function Products() {
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-primary-600 to-primary-400 rounded-2xl p-8 lg:p-12 text-white">
             <h3 className="text-2xl lg:text-3xl font-bold mb-4">
-              ¿No encuentras lo que buscas?
+              ¿Quieres saber más sobre nuestros productos?
             </h3>
             <p className="text-xl mb-6 text-primary-100">
-              Hacemos productos personalizados para ocasiones especiales
+              Contáctanos para conocer toda nuestra línea de premezclas y encontrar la perfecta para ti
             </p>
-            <a 
-              href="https://wa.link/zoxx5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-primary-800 px-8 py-4 rounded-full font-bold hover:bg-primary-50 transition-colors inline-flex items-center text-lg"
-            >
-              <span className="mr-2">🎂</span>
-              Solicitar Producto Personalizado
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="https://wa.link/zoxx5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-primary-800 px-8 py-4 rounded-full font-bold hover:bg-primary-50 transition-colors inline-flex items-center justify-center text-lg"
+              >
+                <span className="mr-2">💬</span>
+                Consultar por WhatsApp
+              </a>
+              <a 
+                href="https://www.instagram.com/abuelacocasinglutenlactosa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-8 py-4 rounded-full font-bold transition-colors border border-white/30 inline-flex items-center justify-center text-lg"
+              >
+                <span className="mr-2">📷</span>
+                Ver en Instagram
+              </a>
+            </div>
           </div>
         </div>
       </div>

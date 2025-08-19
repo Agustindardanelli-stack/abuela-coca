@@ -178,7 +178,7 @@ export default function Footer() {
             <div className="flex items-center text-primary-300 text-sm mb-4 md:mb-0">
               <span>© {currentYear} Abuela Coca </span>     
               <span className="mx-1">•</span> 
-              <span> en Río Cuarto, Córdoba</span>
+              <span>Río Cuarto, Córdoba</span>
             </div>
             
             <div className="flex items-center space-x-6 text-sm">

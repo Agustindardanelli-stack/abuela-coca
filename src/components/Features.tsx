@@ -101,15 +101,15 @@ export default function Features() {
               <div className="text-primary-100">Seguidores felices</div>
             </div>
             <div>
-              <div className="text-3xl lg:text-4xl font-bold mb-2">86</div>
-              <div className="text-primary-100">Productos únicos</div>
+              <div className="text-3xl lg:text-4xl font-bold mb-2">100%</div>
+              <div className="text-primary-100">Sin Lactosa</div>
             </div>
             <div>
               <div className="text-3xl lg:text-4xl font-bold mb-2">100%</div>
               <div className="text-primary-100">Sin gluten</div>
             </div>
             <div>
-              <div className="text-3xl lg:text-4xl font-bold mb-2">5+</div>
+              <div className="text-3xl lg:text-4xl font-bold mb-2">4+</div>
               <div className="text-primary-100">Años de experiencia</div>
             </div>
           </div>
