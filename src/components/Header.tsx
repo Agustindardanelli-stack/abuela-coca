@@ -50,13 +50,19 @@ export default function Header() {
             >
               Inicio
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection('productos')}
               className="text-primary-700 hover:text-primary-600 font-medium transition-colors"
             >
               Productos
             </button>
-            <button 
+            <button
+              onClick={() => scrollToSection('recetas')}
+              className="text-primary-700 hover:text-primary-600 font-medium transition-colors"
+            >
+              Recetas
+            </button>
+            <button
               onClick={() => scrollToSection('nosotros')}
               className="text-primary-700 hover:text-primary-600 font-medium transition-colors"
             >
@@ -117,13 +123,19 @@ export default function Header() {
               >
                 Inicio
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('productos')}
                 className="text-left text-primary-700 hover:text-primary-600 font-medium transition-colors py-2"
               >
                 Productos
               </button>
-              <button 
+              <button
+                onClick={() => scrollToSection('recetas')}
+                className="text-left text-primary-700 hover:text-primary-600 font-medium transition-colors py-2"
+              >
+                Recetas
+              </button>
+              <button
                 onClick={() => scrollToSection('nosotros')}
                 className="text-left text-primary-700 hover:text-primary-600 font-medium transition-colors py-2"
               >
