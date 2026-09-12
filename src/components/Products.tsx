@@ -26,9 +26,7 @@ export default function Products() {
   const categories: Category[] = [
     { id: 'todos', name: 'Todos los productos', icon: '🌾' },
     { id: 'premezclas', name: 'Premezclas', icon: '🥄' },
-    { id: 'universal', name: 'Universal', icon: '⭐' },
-    { id: 'premium', name: 'Premium', icon: '👑' },
-    { id: 'especiales', name: 'Especiales', icon: '✨' }
+    { id: 'panificados', name: 'Pan Rallado', icon: '🍞' }
   ]
 
   const products: Product[] = [
@@ -36,7 +34,7 @@ export default function Products() {
       id: 1,
       name: 'Premezcla Universal Sin Gluten',
       category: 'premezclas',
-      description: 'Mezcla perfecta de harinas sin gluten para todo tipo de preparaciones. Ideal para tortas, panes y galletas.',
+      description: 'Nuestra premezcla multiuso: con ella podés hacer pan de molde, tortas, facturas, muffins y mucho más. La base perfecta para todas tus preparaciones sin gluten.',
       price: '$2.500',
       image: '/api/placeholder/300/300',
       rating: 5,
@@ -44,50 +42,40 @@ export default function Products() {
     },
     {
       id: 2,
-      name: 'Premezcla Universal Premium',
+      name: 'Premezcla para Pizza',
       category: 'premezclas',
-      description: 'Versión premium de nuestra premezcla, con ingredientes de primera calidad para resultados excepcionales.',
-      price: '$3.200',
+      description: 'Masa de pizza sin gluten, liviana y crocante por fuera, tierna por dentro. Lista para tus noches de pizza casera.',
+      price: '$2.700',
       image: '/api/placeholder/300/300',
       rating: 5,
       popular: true
     },
     {
       id: 3,
-      name: 'Premezcla para Repostería',
+      name: 'Premezcla para Bizcochuelo',
       category: 'premezclas',
-      description: 'Especialmente formulada para repostería fina. Textura suave y sabor neutro.',
-      price: '$2.800',
+      description: 'Bizcochuelo esponjoso y tierno, ideal como base para tortas de cumpleaños, cupcakes y meriendas.',
+      price: '$2.600',
       image: '/api/placeholder/300/300',
       rating: 5,
       popular: false
     },
     {
       id: 4,
-      name: 'Premezcla para Panes',
+      name: 'Premezcla para Bizcochuelo de Chocolate',
       category: 'premezclas',
-      description: 'Mezcla específica para panes caseros sin gluten. Resultado esponjoso y sabroso.',
-      price: '$2.600',
-      image: '/api/placeholder/300/300',
-      rating: 4,
-      popular: false
-    },
-    {
-      id: 5,
-      name: 'Premezcla Integral',
-      category: 'premezclas',
-      description: 'Con fibras y cereales integrales. Ideal para quienes buscan opciones más nutritivas.',
-      price: '$3.000',
+      description: 'El clásico bizcochuelo de chocolate, húmedo y con mucho sabor. Perfecto para tortas y brownies sin gluten ni lactosa.',
+      price: '$2.800',
       image: '/api/placeholder/300/300',
       rating: 5,
       popular: true
     },
     {
-      id: 6,
-      name: 'Premezcla Dulce',
-      category: 'premezclas',
-      description: 'Perfecta para postres y preparaciones dulces. Con un toque especial de vainilla.',
-      price: '$2.900',
+      id: 5,
+      name: 'Pan Rallado Sin Gluten',
+      category: 'panificados',
+      description: 'Ideal para milanesas, empanadas y rebozados bien crocantes. 100% libre de gluten y sin lactosa.',
+      price: '$1.900',
       image: '/api/placeholder/300/300',
       rating: 4,
       popular: false
