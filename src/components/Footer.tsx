@@ -1,6 +1,7 @@
 'use client'
 
-import { Instagram, MapPin, MessageCircle, Heart, Clock, Phone } from 'lucide-react'
+import { Instagram, MapPin, MessageCircle, Heart, Clock } from 'lucide-react'
+import { INSTAGRAM_URL, WHATSAPP_URL } from '@/lib/site'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -37,7 +38,7 @@ export default function Footer() {
             
             <div className="flex space-x-4">
               <a 
-                href="https://www.instagram.com/abuelacocasinglutenlactosa/"
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-primary-600 hover:bg-pink-600 rounded-full flex items-center justify-center transition-colors"
@@ -46,7 +47,7 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
-                href="https://wa.link/zoxx5"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-primary-600 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors"
@@ -90,7 +91,7 @@ export default function Footer() {
                   onClick={() => scrollToSection('testimonios')}
                   className="text-primary-300 hover:text-white transition-colors"
                 >
-                  Testimonios
+                  Opiniones
                 </button>
               </li>
               <li>
@@ -125,7 +126,7 @@ export default function Footer() {
               </div>
               
               <a 
-                href="https://wa.link/zoxx5"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center text-green-400 hover:text-green-300 transition-colors"
@@ -182,9 +183,9 @@ export default function Footer() {
             </div>
             
             <div className="flex items-center space-x-6 text-sm">
-              <span className="text-primary-300">Síguenos:</span>
+              <span className="text-primary-300">Seguinos:</span>
               <a 
-                href="https://www.instagram.com/abuelacocasinglutenlactosa/"
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-300 hover:text-white transition-colors flex items-center"
@@ -193,7 +194,7 @@ export default function Footer() {
                 Instagram
               </a>
               <a 
-                href="https://wa.link/zoxx5"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-300 hover:text-white transition-colors flex items-center"
@@ -209,7 +210,7 @@ export default function Footer() {
       {/* Floating WhatsApp Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <a 
-          href="https://wa.link/zoxx5"
+          href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 animate-bounce-slow"

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Star, Heart, ShoppingCart } from 'lucide-react'
+import { INSTAGRAM_URL, WHATSAPP_URL } from '@/lib/site'
 
 interface Category {
   id: string
@@ -145,7 +146,7 @@ export default function Products() {
                 {/* Overlay con botón */}
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <a 
-                    href="https://wa.link/zoxx5"
+                    href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white text-primary-800 px-6 py-3 rounded-full font-semibold hover:bg-primary-100 transition-colors inline-flex items-center"
@@ -194,7 +195,7 @@ export default function Products() {
                     {product.price}
                   </span>
                   <a 
-                    href="https://wa.link/zoxx5"
+                    href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors inline-flex items-center"
@@ -215,11 +216,11 @@ export default function Products() {
               ¿Quieres saber más sobre nuestros productos?
             </h3>
             <p className="text-xl mb-6 text-primary-100">
-              Contáctanos para conocer toda nuestra línea de premezclas y encontrar la perfecta para ti
+              Escribinos para conocer toda nuestra línea de premezclas y encontrar la ideal para vos
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="https://wa.link/zoxx5"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-primary-800 px-8 py-4 rounded-full font-bold hover:bg-primary-50 transition-colors inline-flex items-center justify-center text-lg"
@@ -228,7 +229,7 @@ export default function Products() {
                 Consultar por WhatsApp
               </a>
               <a 
-                href="https://www.instagram.com/abuelacocasinglutenlactosa/"
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-8 py-4 rounded-full font-bold transition-colors border border-white/30 inline-flex items-center justify-center text-lg"

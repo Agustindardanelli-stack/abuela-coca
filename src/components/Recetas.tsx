@@ -1,6 +1,7 @@
 'use client'
 
 import { ChefHat, Pizza, Cake, Cookie, Sandwich, LucideIcon } from 'lucide-react'
+import { WHATSAPP_URL } from '@/lib/site'
 
 interface Receta {
   icon: LucideIcon
@@ -115,7 +116,7 @@ export default function Recetas() {
               Escribinos por WhatsApp y te contamos cómo sacarle el máximo provecho a cada premezcla
             </p>
             <a
-              href="https://wa.link/zoxx5"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-primary-800 px-8 py-4 rounded-full font-bold hover:bg-primary-50 transition-colors inline-flex items-center justify-center text-lg"

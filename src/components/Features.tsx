@@ -62,7 +62,7 @@ export default function Features() {
           </h2>
           <p className="text-xl text-primary-600 max-w-3xl mx-auto font-medium">
             Más de <strong className="font-semibold">1676 familias</strong> confían en nosotros para disfrutar de dulces caseros 
-            sin restricciones alimentarias. Descubre qué nos hace especiales.
+            sin restricciones alimentarias. Descubrí qué nos hace especiales.
           </p>
         </div>
 
@@ -97,8 +97,8 @@ export default function Features() {
         <div className="mt-20 bg-gradient-to-r from-primary-600 to-primary-400 rounded-2xl p-8 lg:p-12 text-white">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl lg:text-4xl font-bold mb-2">1676</div>
-              <div className="text-primary-100">Seguidores felices</div>
+              <div className="text-3xl lg:text-4xl font-bold mb-2">+1.600</div>
+              <div className="text-primary-100">Seguidores en Instagram</div>
             </div>
             <div>
               <div className="text-3xl lg:text-4xl font-bold mb-2">100%</div>

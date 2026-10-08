@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Menu, X, Instagram, MapPin, Phone } from 'lucide-react'
+import { Menu, X, Instagram, MapPin } from 'lucide-react'
+import { INSTAGRAM_URL, WHATSAPP_URL } from '@/lib/site'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
@@ -72,7 +73,7 @@ export default function Header() {
               onClick={() => scrollToSection('testimonios')}
               className="text-primary-700 hover:text-primary-600 font-medium transition-colors"
             >
-              Testimonios
+              Opiniones
             </button>
             <button 
               onClick={() => scrollToSection('contacto')}
@@ -85,7 +86,7 @@ export default function Header() {
           {/* Social Links & Contact */}
           <div className="hidden md:flex items-center space-x-4">
             <a 
-              href="https://www.instagram.com/abuelacocasinglutenlactosa/"
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary-600 hover:text-secondary-500 transition-colors"
@@ -94,7 +95,7 @@ export default function Header() {
               <Instagram className="w-5 h-5" />
             </a>
             <a 
-              href="https://wa.link/zoxx5"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary text-sm"
@@ -145,7 +146,7 @@ export default function Header() {
                 onClick={() => scrollToSection('testimonios')}
                 className="text-left text-primary-700 hover:text-primary-600 font-medium transition-colors py-2"
               >
-                Testimonios
+                Opiniones
               </button>
               <button 
                 onClick={() => scrollToSection('contacto')}
@@ -156,7 +157,7 @@ export default function Header() {
               <div className="pt-4 border-t border-primary-200">
                 <div className="flex items-center space-x-4">
                   <a 
-                    href="https://www.instagram.com/abuelacocasinglutenlactosa/"
+                    href={INSTAGRAM_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary-600 hover:text-secondary-500 transition-colors"
@@ -164,7 +165,7 @@ export default function Header() {
                     <Instagram className="w-5 h-5" />
                   </a>
                   <a 
-                    href="https://wa.link/zoxx5"
+                    href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary text-sm"

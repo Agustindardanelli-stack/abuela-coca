@@ -1,6 +1,7 @@
 'use client'
 
 import { Instagram, MapPin, Star } from 'lucide-react'
+import { INSTAGRAM_URL, WHATSAPP_URL } from '@/lib/site'
 
 export default function Hero() {
   return (
@@ -59,7 +60,7 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fadeInUp" style={{ animationDelay: '0.8s' }}>
               <a 
-                href="https://wa.link/zoxx5"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl inline-flex items-center justify-center"
@@ -68,13 +69,13 @@ export default function Hero() {
                 Hacer Pedido por WhatsApp
               </a>
               <a 
-                href="https://www.instagram.com/abuelacocasinglutenlactosa/"
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 border border-white/30 inline-flex items-center justify-center"
               >
                 <Instagram className="w-5 h-5 mr-2" />
-                Síguenos en Instagram
+                Seguinos en Instagram
               </a>
             </div>
 
