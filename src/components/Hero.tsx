@@ -1,132 +1,79 @@
-'use client'
-
-import { Instagram, MapPin, Star } from 'lucide-react'
-import { INSTAGRAM_URL, WHATSAPP_URL } from '@/lib/site'
+import { ArrowRight, MapPin } from 'lucide-react'
+import { ADDRESS, WHATSAPP_URL } from '@/lib/site'
+import { productos } from '@/content/productos'
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center bg-gradient-to-br from-primary-600 via-primary-500 to-primary-400 text-white overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-pattern opacity-20"></div>
-      
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 animate-bounce-slow">
-        <div className="w-8 h-8 bg-white/20 rounded-full"></div>
-      </div>
-      <div className="absolute top-40 right-16 animate-bounce-slow" style={{ animationDelay: '1s' }}>
-        <div className="w-6 h-6 bg-white/15 rounded-full"></div>
-      </div>
-      <div className="absolute bottom-32 left-20 animate-bounce-slow" style={{ animationDelay: '2s' }}>
-        <div className="w-4 h-4 bg-white/10 rounded-full"></div>
-      </div>
-      
-      <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
-          <div className="text-center lg:text-left">
-            {/* Badge */}
-            {/* <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 animate-fadeInUp">
-              <Star className="w-4 h-4 mr-2 text-yellow-300" />
-              <span className="text-sm font-medium">1676 seguidores nos eligen</span>
-            </div> */}
+    <section id="inicio" className="relative overflow-hidden">
+      <div className="container-site grid items-center gap-14 pb-20 pt-10 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:pb-28">
+        <div>
+          <p className="eyebrow">Fábrica de alimentos · Río Cuarto</p>
+          <h1 className="mt-5 text-[2.6rem] font-medium leading-[1.05] sm:text-6xl lg:text-[4.25rem]">
+            Sin gluten, sin lactosa,
+            <span className="block italic text-brand">con sabor de casa.</span>
+          </h1>
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-500 sm:text-lg">
+            Premezclas, pastelería y salados aptos para celíacos e intolerantes a la lactosa. Recetas de la abuela, hechas
+            para que toda la familia coma lo mismo.
+          </p>
 
-            {/* Main Heading */}
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-shadow-lg animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-              Dulces con el
-              <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent font-extrabold">
-                Amor de la Abuela
-              </span>
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-xl lg:text-2xl mb-8 text-white/90 animate-fadeInUp font-medium" style={{ animationDelay: '0.4s' }}>
-              Elaboración artesanal de alimentos <strong className="font-semibold">sin gluten y sin lactosa</strong> 
-              en Río Cuarto, Córdoba
-            </p>
-
-            {/* Features List */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
-              <div className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="text-sm font-medium">✨ Sin Gluten</span>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="text-sm font-medium">🥛 Sin Lactosa</span>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="text-sm font-medium">🏠 Caseros</span>
-              </div>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fadeInUp" style={{ animationDelay: '0.8s' }}>
-              <a 
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl inline-flex items-center justify-center"
-              >
-                <span className="mr-2">📱</span>
-                Hacer Pedido por WhatsApp
-              </a>
-              <a 
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 border border-white/30 inline-flex items-center justify-center"
-              >
-                <Instagram className="w-5 h-5 mr-2" />
-                Seguinos en Instagram
-              </a>
-            </div>
-
-            {/* Contact Info */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8 text-sm animate-fadeInUp" style={{ animationDelay: '1s' }}>
-              <div className="flex items-center">
-                <MapPin className="w-4 h-4 mr-2" />
-                <span>Luis Reinaudi 1874, Río Cuarto</span>
-              </div>
-            </div>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="#productos" className="btn-dark !px-7 !py-3.5">
+              Ver productos <ArrowRight className="h-4 w-4" />
+            </a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-outline !px-7 !py-3.5">
+              Pedir por WhatsApp
+            </a>
           </div>
 
-          {/* Image/Logo Side */}
-          <div className="flex justify-center lg:justify-end animate-fadeInUp" style={{ animationDelay: '1.2s' }}>
-            <div className="relative">
-              {/* Main Circle */}
-              <div className="w-80 h-80 lg:w-96 lg:h-96 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center animate-float">
-                <div className="w-64 h-64 lg:w-80 lg:h-80 bg-white rounded-full flex items-center justify-center shadow-2xl">
-                  <div className="text-center">
-                    <div className="w-32 h-32 bg-gradient-to-br from-primary-600 to-primary-400 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-white font-bold text-4xl">AC</span>
-                    </div>
-                    <h2 className="text-2xl font-bold text-primary-800 mb-2">Abuela Coca</h2>
-                    <p className="text-primary-600 font-semibold">Productos artesanales</p>
-                    <p className="text-primary-500 text-sm font-medium">Sin gluten • Sin lactosa</p>
-                  </div>
-                </div>
+          <dl className="mt-10 grid max-w-md grid-cols-3 divide-x divide-ink/10 border-y border-ink/10 py-5 text-center">
+            {[
+              ['Sin TACC', 'Apto celíacos'],
+              ['Sin lactosa', 'Apto APLV'],
+              [String(productos.length), 'Productos'],
+            ].map(([t, d]) => (
+              <div key={t} className="px-2">
+                <dt className="whitespace-nowrap font-display text-base font-medium text-ink sm:text-xl">{t}</dt>
+                <dd className="mt-1 text-[11px] text-ink-500 sm:text-xs">{d}</dd>
               </div>
-              
-              {/* Floating badges */}
-              {/* <div className="absolute -top-4 -right-4 bg-secondary-500 text-white rounded-full w-16 h-16 flex items-center justify-center animate-bounce-slow">
-                <div className="text-center">
-                  <div className="text-lg font-bold">86</div>
-                  <div className="text-xs">Posts</div>
-                </div>
-              </div> */}
-              
-              {/* <div className="absolute -bottom-4 -left-4 bg-green-500 text-white rounded-full w-20 h-20 flex items-center justify-center animate-bounce-slow" style={{ animationDelay: '1s' }}>
-                <div className="text-center">
-                  <div className="text-lg font-bold">1676</div>
-                  <div className="text-xs">Seguidores</div>
-                </div>
-              </div> */}
-            </div>
-          </div>
+            ))}
+          </dl>
+
+          <p className="mt-6 flex items-center gap-2 text-sm text-ink-500">
+            <MapPin className="h-4 w-4 text-brand" /> {ADDRESS.street}, {ADDRESS.city}
+          </p>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/70 rounded-full mt-2"></div>
+        {/* Collage de productos reales */}
+        <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+          <div className="absolute -right-24 -top-16 h-80 w-80 rounded-full bg-blush/50 blur-3xl" aria-hidden="true" />
+          <div className="relative grid grid-cols-5 grid-rows-6 gap-3 sm:gap-4" style={{ aspectRatio: '1 / 1.02' }}>
+            {/* eslint-disable @next/next/no-img-element */}
+            <img
+              src="/productos/prepizza.jpg"
+              alt="Prepizza sin gluten Abuela Coca"
+              className="col-span-3 row-span-4 h-full w-full rounded-[1.75rem] object-cover shadow-xl shadow-ink/10"
+            />
+            <img
+              src="/productos/brownie.jpg"
+              alt="Brownie sin gluten y sin lactosa"
+              className="col-span-2 row-span-3 h-full w-full rounded-[1.75rem] object-cover shadow-xl shadow-ink/10"
+            />
+            <img
+              src="/productos/bizcochuelo-base.jpg"
+              alt="Premezcla para bizcochuelo Abuela Coca"
+              className="col-span-2 row-span-3 h-full w-full rounded-[1.75rem] object-cover shadow-xl shadow-ink/10"
+            />
+            <img
+              src="/productos/noquis-arroz.jpg"
+              alt="Ñoquis de arroz sin gluten"
+              className="col-span-3 row-span-2 h-full w-full rounded-[1.75rem] object-cover shadow-xl shadow-ink/10"
+            />
+            {/* eslint-enable @next/next/no-img-element */}
+          </div>
+          <div className="absolute -bottom-5 left-4 rounded-2xl bg-white px-5 py-3 shadow-lg shadow-ink/10 sm:left-8">
+            <p className="font-display text-lg italic text-ink">Hecho en Río Cuarto</p>
+            <p className="text-xs text-ink-500">Fábrica de alimentos sin TACC</p>
           </div>
         </div>
       </div>

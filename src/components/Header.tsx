@@ -1,183 +1,83 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { Menu, X, Instagram, MapPin } from 'lucide-react'
-import { INSTAGRAM_URL, WHATSAPP_URL } from '@/lib/site'
+import { useEffect, useState } from 'react'
+import { Menu, X } from 'lucide-react'
+import Logo from './Logo'
+import { WHATSAPP_URL } from '@/lib/site'
+
+const NAV = [
+  { href: '#productos', label: 'Productos' },
+  { href: '#nosotros', label: 'Nosotros' },
+  { href: '#como-pedir', label: 'Cómo pedir' },
+  { href: '#recetas', label: 'Recetas' },
+  { href: '#contacto', label: 'Contacto' },
+]
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
-  const [isScrolled, setIsScrolled] = useState<boolean>(false)
+  const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setScrolled(window.scrollY > 12)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setIsMenuOpen(false)
-    }
-  }
-
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-        : 'bg-white/80 backdrop-blur-sm'
-    }`}>
-      <div className="container-custom">
-        <div className="flex items-center justify-between py-4">
-          {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-primary-600 to-primary-400 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">AC</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-semibold text-primary-800">Abuela Coca</h1>
-              <p className="text-xs text-primary-600 font-medium">Sin Gluten • Sin Lactosa</p>
-            </div>
-          </div>
+    <header
+      className={`sticky top-0 z-40 transition-colors duration-300 ${
+        scrolled || open ? 'border-b border-ink/10 bg-cream/95 backdrop-blur' : 'bg-cream'
+      }`}
+    >
+      <div className="container-site flex h-[4.5rem] items-center justify-between gap-6">
+        <a href="#inicio" aria-label="Abuela Coca, inicio" onClick={() => setOpen(false)}>
+          <Logo />
+        </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <button 
-              onClick={() => scrollToSection('inicio')}
-              className="text-primary-700 hover:text-primary-600 font-medium transition-colors"
-            >
-              Inicio
-            </button>
-            <button
-              onClick={() => scrollToSection('productos')}
-              className="text-primary-700 hover:text-primary-600 font-medium transition-colors"
-            >
-              Productos
-            </button>
-            <button
-              onClick={() => scrollToSection('recetas')}
-              className="text-primary-700 hover:text-primary-600 font-medium transition-colors"
-            >
-              Recetas
-            </button>
-            <button
-              onClick={() => scrollToSection('nosotros')}
-              className="text-primary-700 hover:text-primary-600 font-medium transition-colors"
-            >
-              Nosotros
-            </button>
-            <button 
-              onClick={() => scrollToSection('testimonios')}
-              className="text-primary-700 hover:text-primary-600 font-medium transition-colors"
-            >
-              Opiniones
-            </button>
-            <button 
-              onClick={() => scrollToSection('contacto')}
-              className="text-primary-700 hover:text-primary-600 font-medium transition-colors"
-            >
-              Contacto
-            </button>
-          </nav>
-
-          {/* Social Links & Contact */}
-          <div className="hidden md:flex items-center space-x-4">
-            <a 
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary-600 hover:text-secondary-500 transition-colors"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-5 h-5" />
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Principal">
+          {NAV.map((n) => (
+            <a key={n.href} href={n.href} className="text-sm font-medium text-ink-700 transition-colors hover:text-brand">
+              {n.label}
             </a>
-            <a 
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary text-sm"
-            >
-              Pedidos WhatsApp
-            </a>
-          </div>
+          ))}
+        </nav>
 
-          {/* Mobile menu button */}
-          <button 
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+        <div className="flex items-center gap-2">
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-dark hidden !px-5 !py-2.5 sm:inline-flex">
+            Hacer un pedido
+          </a>
+          <button
+            type="button"
+            onClick={() => setOpen((o) => !o)}
+            className="rounded-full p-2 text-ink md:hidden"
+            aria-expanded={open}
+            aria-controls="menu-movil"
+            aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-primary-200 py-4 animate-fadeIn">
-            <nav className="flex flex-col space-y-4">
-              <button 
-                onClick={() => scrollToSection('inicio')}
-                className="text-left text-primary-700 hover:text-primary-600 font-medium transition-colors py-2"
-              >
-                Inicio
-              </button>
-              <button
-                onClick={() => scrollToSection('productos')}
-                className="text-left text-primary-700 hover:text-primary-600 font-medium transition-colors py-2"
-              >
-                Productos
-              </button>
-              <button
-                onClick={() => scrollToSection('recetas')}
-                className="text-left text-primary-700 hover:text-primary-600 font-medium transition-colors py-2"
-              >
-                Recetas
-              </button>
-              <button
-                onClick={() => scrollToSection('nosotros')}
-                className="text-left text-primary-700 hover:text-primary-600 font-medium transition-colors py-2"
-              >
-                Nosotros
-              </button>
-              <button 
-                onClick={() => scrollToSection('testimonios')}
-                className="text-left text-primary-700 hover:text-primary-600 font-medium transition-colors py-2"
-              >
-                Opiniones
-              </button>
-              <button 
-                onClick={() => scrollToSection('contacto')}
-                className="text-left text-primary-700 hover:text-primary-600 font-medium transition-colors py-2"
-              >
-                Contacto
-              </button>
-              <div className="pt-4 border-t border-primary-200">
-                <div className="flex items-center space-x-4">
-                  <a 
-                    href={INSTAGRAM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary-600 hover:text-secondary-500 transition-colors"
-                  >
-                    <Instagram className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary text-sm"
-                  >
-                    Pedidos WhatsApp
-                  </a>
-                </div>
-              </div>
-            </nav>
-          </div>
-        )}
       </div>
+
+      {open && (
+        <nav id="menu-movil" className="border-t border-ink/10 md:hidden" aria-label="Menú">
+          <ul className="container-site flex flex-col py-3">
+            {NAV.map((n) => (
+              <li key={n.href}>
+                <a href={n.href} onClick={() => setOpen(false)} className="block py-3 font-display text-xl text-ink">
+                  {n.label}
+                </a>
+              </li>
+            ))}
+            <li className="pt-3 pb-2">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-dark w-full">
+                Hacer un pedido
+              </a>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   )
 }

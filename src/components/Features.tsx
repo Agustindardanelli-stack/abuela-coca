@@ -61,8 +61,8 @@ export default function Features() {
             </span>
           </h2>
           <p className="text-xl text-primary-600 max-w-3xl mx-auto font-medium">
-            Más de <strong className="font-semibold">1676 familias</strong> confían en nosotros para disfrutar de dulces caseros 
-            sin restricciones alimentarias. Descubrí qué nos hace especiales.
+            Elaboramos dulces y premezclas caseras para que celíacos e intolerantes a la lactosa disfruten
+            sin restricciones. Descubrí qué nos hace especiales.
           </p>
         </div>
 

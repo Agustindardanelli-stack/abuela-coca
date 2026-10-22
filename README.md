@@ -10,7 +10,8 @@ Los clientes del emprendimiento llegaban solo por Instagram. La landing les da u
 
 ## Funcionalidades
 
-- Catálogo de productos y premezclas, más una sección de recetas
+- Catálogo real de 14 productos con fotos, precios, etiquetas (Sin TACC, Sin lactosa, APLV) y filtro por categoría
+- Pedido por WhatsApp desde cada producto, sección "Cómo pedir" y bloque para ventas mayoristas
 - **Botón flotante de WhatsApp** siempre visible
 - **Formulario que arma el pedido** (nombre, tipo de consulta y mensaje) y lo abre en WhatsApp listo para enviar, sin necesidad de servidor de correo
 - **SEO local:** metadatos, datos estructurados `Bakery` (schema.org) con dirección y horarios, `sitemap.xml`, `robots.txt` y URL canónica
@@ -22,7 +23,7 @@ Los clientes del emprendimiento llegaban solo por Instagram. La landing les da u
 
 ## Stack
 
-Next.js 14 (App Router) · TypeScript · Tailwind CSS · Lucide icons · Vercel
+Next.js 14 (App Router) · TypeScript · Tailwind CSS · Fraunces + Inter · Lucide icons · Vercel
 
 ## Correr en local
 
@@ -53,8 +54,9 @@ src/
 │   ├── page.tsx
 │   ├── opengraph-image.tsx   imagen para compartir
 │   ├── sitemap.ts · robots.ts
-├── components/               Header, Hero, Features, Products, Recetas,
-│                             Testimonials, Contact, ContactForm, Footer, WhatsAppButton
+├── components/               Header, Hero, About, Products, HowToOrder, Recetas,
+│                             Testimonials, Contact, ContactForm, Footer, Logo, WhatsAppButton
+├── content/productos.ts      catálogo (precios, fotos, etiquetas)
 ├── content/testimonios.ts    opiniones reales de clientes
 └── lib/site.ts               datos del negocio
 ```

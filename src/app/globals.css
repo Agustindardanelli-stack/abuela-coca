@@ -4,88 +4,55 @@
 
 @layer base {
   html {
-    font-family: var(--font-poppins), Poppins, system-ui, sans-serif;
+    scroll-padding-top: 5rem;
   }
-  
   body {
-    @apply text-primary-900;
-    font-family: var(--font-poppins), Poppins, system-ui, sans-serif;
+    @apply bg-cream text-ink font-sans antialiased;
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-poppins), Poppins, system-ui, sans-serif;
-    font-weight: 600;
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-ink;
+    font-optical-sizing: auto;
+    letter-spacing: -0.015em;
+  }
+  ::selection {
+    @apply bg-blush text-ink;
   }
 }
 
 @layer components {
-  .btn-primary {
-    @apply bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+  .container-site {
+    @apply mx-auto w-full max-w-site px-5 sm:px-8;
   }
-
-  .btn-secondary {
-    @apply bg-gradient-to-r from-secondary-600 to-secondary-500 hover:from-secondary-700 hover:to-secondary-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+  .section {
+    @apply py-20 sm:py-28;
   }
-
-  .card {
-    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6;
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-brand;
   }
-
-  .section-padding {
-    @apply py-16 lg:py-24;
+  .section-title {
+    @apply mt-3 text-3xl font-medium leading-tight sm:text-[2.75rem];
   }
-
-  .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  .lead {
+    @apply mt-4 max-w-2xl text-base leading-relaxed text-ink-500 sm:text-lg;
   }
-}
-
-@layer utilities {
-  .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
   }
-
-  .text-shadow-lg {
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  .btn-dark {
+    @apply btn bg-ink text-cream hover:bg-ink-700;
   }
-
-  .bg-pattern {
-    background-image: 
-      radial-gradient(circle at 20% 50%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(210, 105, 30, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 80%, rgba(218, 165, 32, 0.1) 0%, transparent 50%);
+  .btn-outline {
+    @apply btn border border-ink/20 bg-transparent text-ink hover:border-ink hover:bg-white;
   }
-}
-
-/* Animaciones personalizadas */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 40px, 0);
+  .btn-wa {
+    @apply btn bg-[#1FAE55] text-white hover:bg-[#178F45];
   }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+  .chip {
+    @apply inline-flex items-center rounded-full border border-ink/10 bg-white/70 px-2.5 py-1 text-[11px] font-medium text-ink-700;
   }
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-/* Scrollbar personalizado */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-primary-100;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-primary-400 rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary-500;
+  .field {
+    @apply w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm text-ink placeholder:text-ink-300 transition focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20;
+  }
 }

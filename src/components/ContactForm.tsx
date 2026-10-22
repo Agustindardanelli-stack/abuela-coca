@@ -11,8 +11,7 @@ const SUBJECTS: Record<string, string> = {
   general: 'Consulta general',
 }
 
-const field =
-  'w-full px-4 py-3 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors'
+const field = 'field'
 
 /**
  * El sitio no tiene servidor de correo: el formulario arma el mensaje y lo abre en WhatsApp,
@@ -44,14 +43,14 @@ export default function ContactForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-6">
       <div>
-        <label htmlFor="name" className="mb-2 block text-sm font-medium text-primary-700">
+        <label htmlFor="name" className="mb-2 block text-sm font-medium text-ink-700">
           Tu nombre
         </label>
         <input type="text" id="name" name="name" required maxLength={60} autoComplete="name" className={field} placeholder="Nombre y apellido" />
       </div>
 
       <div>
-        <label htmlFor="subject" className="mb-2 block text-sm font-medium text-primary-700">
+        <label htmlFor="subject" className="mb-2 block text-sm font-medium text-ink-700">
           ¿Qué necesitás?
         </label>
         <select id="subject" name="subject" required defaultValue="" className={field}>
@@ -67,7 +66,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-2 block text-sm font-medium text-primary-700">
+        <label htmlFor="message" className="mb-2 block text-sm font-medium text-ink-700">
           Mensaje
         </label>
         <textarea
@@ -83,13 +82,13 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-green-500 to-green-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:from-green-600 hover:to-green-700 hover:shadow-lg"
+        className="btn-wa w-full !py-3.5"
       >
         <MessageCircle className="h-5 w-5" /> Enviar por WhatsApp
       </button>
 
       {copied && (
-        <p role="status" className="flex items-center justify-center gap-1.5 text-sm text-green-700">
+        <p role="status" className="flex items-center justify-center gap-1.5 text-sm text-[#178F45]">
           <Check className="h-4 w-4" /> Copiamos tu mensaje: pegalo en el chat de WhatsApp.
         </p>
       )}
