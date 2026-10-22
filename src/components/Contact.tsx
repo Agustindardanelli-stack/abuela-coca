@@ -1,6 +1,6 @@
-import { Clock, Instagram, MapPin, MessageCircle, Navigation } from 'lucide-react'
+import { Clock, Instagram, Mail, MapPin, MessageCircle, Navigation } from 'lucide-react'
 import ContactForm from './ContactForm'
-import { ADDRESS, INSTAGRAM_URL, INSTAGRAM_USER, MAPS_EMBED_URL, MAPS_URL, WHATSAPP_URL } from '@/lib/site'
+import { ADDRESS, EMAIL, INSTAGRAM_URL, INSTAGRAM_USER, MAPS_EMBED_URL, MAPS_URL, PHONE_DISPLAY, WHATSAPP_URL } from '@/lib/site'
 
 export default function Contact() {
   return (
@@ -31,8 +31,17 @@ export default function Contact() {
               </li>
               <li className="flex gap-4 py-5">
                 <MessageCircle className="mt-0.5 h-5 w-5 shrink-0 text-brand" strokeWidth={1.7} />
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-medium underline-offset-4 hover:underline">
-                  Pedidos por WhatsApp
+                <div>
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-medium underline-offset-4 hover:underline">
+                    {PHONE_DISPLAY}
+                  </a>
+                  <p className="text-sm text-ink-500">Pedidos por WhatsApp</p>
+                </div>
+              </li>
+              <li className="flex gap-4 py-5">
+                <Mail className="mt-0.5 h-5 w-5 shrink-0 text-brand" strokeWidth={1.7} />
+                <a href={`mailto:${EMAIL}`} className="break-all font-medium underline-offset-4 hover:underline">
+                  {EMAIL}
                 </a>
               </li>
               <li className="flex gap-4 py-5">

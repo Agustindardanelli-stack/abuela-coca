@@ -4,7 +4,7 @@ import { Fraunces, Inter } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from '@vercel/analytics/next'
 import WhatsAppButton from '@/components/WhatsAppButton'
-import { ADDRESS, INSTAGRAM_URL, SITE_URL, WHATSAPP_NUMBER } from '@/lib/site'
+import { ADDRESS, EMAIL, INSTAGRAM_URL, SITE_URL, WHATSAPP_NUMBER } from '@/lib/site'
 
 const display = Fraunces({ subsets: ['latin'], variable: '--font-display', axes: ['opsz', 'SOFT'] })
 const sans = Inter({ subsets: ['latin'], variable: '--font-sans' })
@@ -56,6 +56,7 @@ const localBusiness = {
   url: SITE_URL,
   image: `${SITE_URL}/opengraph-image`,
   ...(WHATSAPP_NUMBER ? { telephone: `+${WHATSAPP_NUMBER}` } : {}),
+  email: EMAIL,
   address: {
     '@type': 'PostalAddress',
     streetAddress: ADDRESS.street,

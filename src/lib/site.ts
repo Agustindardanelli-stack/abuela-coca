@@ -12,9 +12,14 @@ export const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_USER}/`
 /**
  * Número de WhatsApp con código de país, solo dígitos (ej: 5493584123456).
  * Con el número cargado, los botones abren WhatsApp con el mensaje ya escrito.
- * Sin número, se usa el link corto actual.
+ * Por defecto usa el WhatsApp Business del negocio (+54 9 358 431-4868).
  */
-export const WHATSAPP_NUMBER = (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '').replace(/\D/g, '')
+export const WHATSAPP_NUMBER = (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5493584314868').replace(/\D/g, '')
+
+/** Teléfono para mostrar en la web. */
+export const PHONE_DISPLAY = '+54 9 358 431-4868'
+
+export const EMAIL = 'abuelacoca.productosnaturales@gmail.com'
 const WHATSAPP_SHORT_LINK = 'https://wa.link/zoxx5'
 
 export const DEFAULT_ORDER_TEXT = '¡Hola Abuela Coca! Quiero hacer un pedido 😊'
