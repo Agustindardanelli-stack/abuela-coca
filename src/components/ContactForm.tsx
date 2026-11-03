@@ -43,14 +43,14 @@ export default function ContactForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-6">
       <div>
-        <label htmlFor="name" className="mb-2 block text-sm font-medium text-ink-700">
+        <label htmlFor="name" className="mb-2 block text-sm font-medium text-wine-soft">
           Tu nombre
         </label>
         <input type="text" id="name" name="name" required maxLength={60} autoComplete="name" className={field} placeholder="Nombre y apellido" />
       </div>
 
       <div>
-        <label htmlFor="subject" className="mb-2 block text-sm font-medium text-ink-700">
+        <label htmlFor="subject" className="mb-2 block text-sm font-medium text-wine-soft">
           ¿Qué necesitás?
         </label>
         <select id="subject" name="subject" required defaultValue="" className={field}>
@@ -66,7 +66,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-2 block text-sm font-medium text-ink-700">
+        <label htmlFor="message" className="mb-2 block text-sm font-medium text-wine-soft">
           Mensaje
         </label>
         <textarea

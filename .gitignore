@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# tasteskill: capturas e informes del inspector de diseño (no es contenido del proyecto)
+.taste-skill/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

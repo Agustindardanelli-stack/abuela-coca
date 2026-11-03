@@ -2,22 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Dirección: "La página es el objeto" — cada sección está construida como una
+  pieza real de la papelería de Abuela Coca (la etiqueta del paquete, la carta,
+  el itinerario del pedido, la carta de la abuela, el cupón de contacto).
+  Paleta: borgoña profundo + rosa chicle (el rosa del logo de la abuela), papel
+  color hueso para las fichas. Una sola tipografía: Fraunces, en redonda e itálica.
+*/
+
 @layer base {
   html {
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 4.75rem;
   }
   body {
-    @apply bg-cream text-ink font-sans antialiased;
+    @apply bg-wine text-paper font-display antialiased;
   }
   h1,
   h2,
   h3 {
-    @apply font-display text-ink;
+    @apply font-display text-balance;
     font-optical-sizing: auto;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.02em;
+    line-height: 0.98;
   }
   ::selection {
-    @apply bg-blush text-ink;
+    @apply bg-pink text-wine;
+  }
+  :focus-visible {
+    outline: 2px solid var(--pink);
+    outline-offset: 3px;
   }
 }
 
@@ -26,33 +39,207 @@
     @apply mx-auto w-full max-w-site px-5 sm:px-8;
   }
   .section {
-    @apply py-20 sm:py-28;
+    @apply py-16 sm:py-24;
   }
+
+  /* Tipografía */
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.18em] text-brand;
+    @apply text-[0.95rem] font-medium italic text-pink;
   }
   .section-title {
-    @apply mt-3 text-3xl font-medium leading-tight sm:text-[2.75rem];
+    @apply mt-3 text-[2rem] font-medium leading-[0.98] sm:text-[2.75rem];
   }
   .lead {
-    @apply mt-4 max-w-2xl text-base leading-relaxed text-ink-500 sm:text-lg;
+    @apply mt-4 max-w-2xl text-[1.2rem] leading-relaxed text-paper/75 sm:text-[1.4rem];
   }
+
+  /* Botones: una sola forma, cápsula */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[0.95rem] font-medium transition-transform duration-200 active:scale-[0.97];
   }
-  .btn-dark {
-    @apply btn bg-ink text-cream hover:bg-ink-700;
+  .btn-pink {
+    @apply btn bg-pink text-wine hover:bg-pink-light;
   }
-  .btn-outline {
-    @apply btn border border-ink/20 bg-transparent text-ink hover:border-ink hover:bg-white;
+  .btn-paper {
+    @apply btn bg-paper text-wine hover:bg-white;
+  }
+  .btn-line {
+    @apply btn border border-paper/35 text-paper hover:border-paper hover:bg-paper/10;
   }
   .btn-wa {
     @apply btn bg-[#1FAE55] text-white hover:bg-[#178F45];
   }
-  .chip {
-    @apply inline-flex items-center rounded-full border border-ink/10 bg-white/70 px-2.5 py-1 text-[11px] font-medium text-ink-700;
+
+  /* La ficha/papel: toda superficie clara de la página es una hoja de papel */
+  .sheet {
+    @apply bg-paper text-wine;
   }
+
+  /* Borde festoneado (como el troquel de una etiqueta) hecho con máscara radial repetida */
+  .scallop-bottom {
+    --scallop: 22px;
+    mask-image: radial-gradient(circle at 50% 0, transparent calc(var(--scallop) - 1px), #000 var(--scallop));
+    mask-size: calc(var(--scallop) * 2) calc(var(--scallop) * 2);
+    mask-repeat: repeat-x;
+    mask-position: bottom center;
+    -webkit-mask-image: radial-gradient(circle at 50% 0, transparent calc(var(--scallop) - 1px), #000 var(--scallop));
+    -webkit-mask-size: calc(var(--scallop) * 2) calc(var(--scallop) * 2);
+    -webkit-mask-repeat: repeat-x;
+    -webkit-mask-position: bottom center;
+    padding-bottom: calc(var(--scallop) * 0.9);
+  }
+  .scallop-top {
+    --scallop: 18px;
+    mask-image: radial-gradient(circle at 50% 100%, transparent calc(var(--scallop) - 1px), #000 var(--scallop));
+    mask-size: calc(var(--scallop) * 2) calc(var(--scallop) * 2);
+    mask-repeat: repeat-x;
+    mask-position: top center;
+    -webkit-mask-image: radial-gradient(circle at 50% 100%, transparent calc(var(--scallop) - 1px), #000 var(--scallop));
+    -webkit-mask-size: calc(var(--scallop) * 2) calc(var(--scallop) * 2);
+    -webkit-mask-repeat: repeat-x;
+    -webkit-mask-position: top center;
+    padding-top: calc(var(--scallop) * 0.9);
+  }
+
+  /* Borde en zigzag (como el filo cortado de un recibo) */
+  .zigzag-bottom {
+    clip-path: polygon(
+      0% 0%, 100% 0%, 100% 92%,
+      95% 100%, 90% 92%, 85% 100%, 80% 92%, 75% 100%, 70% 92%, 65% 100%, 60% 92%, 55% 100%,
+      50% 92%, 45% 100%, 40% 92%, 35% 100%, 30% 92%, 25% 100%, 20% 92%, 15% 100%, 10% 92%, 5% 100%, 0% 92%
+    );
+  }
+
+  /* Perforación de puntos, como entre un cupón y su talón */
+  .dots-row {
+    background-image: radial-gradient(circle, var(--wine-soft) 1.6px, transparent 1.6px);
+    background-size: 14px 2px;
+    background-repeat: repeat-x;
+    background-position: left center;
+    height: 2px;
+  }
+  .dots-row-light {
+    background-image: radial-gradient(circle, color-mix(in srgb, var(--paper) 55%, transparent) 1.6px, transparent 1.6px);
+    background-size: 14px 2px;
+    background-repeat: repeat-x;
+    background-position: left center;
+    height: 2px;
+  }
+  .dots-col {
+    background-image: radial-gradient(circle, var(--wine-soft) 1.8px, transparent 1.8px);
+    background-size: 2px 16px;
+    background-repeat: repeat-y;
+    background-position: center top;
+    width: 2px;
+  }
+
+  /* Puntero/leader de menú impreso: "Pan Rallado ..... $1.900" */
+  .menu-leader {
+    @apply relative flex-1 overflow-hidden;
+    background-image: radial-gradient(circle, var(--wine-soft) 1.3px, transparent 1.3px);
+    background-size: 7px 2px;
+    background-position: bottom left;
+    background-repeat: repeat-x;
+    height: 1em;
+    margin-bottom: 0.15em;
+  }
+
   .field {
-    @apply w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm text-ink placeholder:text-ink-300 transition focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20;
+    @apply w-full rounded-lg border-0 bg-white px-4 py-3 text-[1rem] text-wine placeholder:text-wine-soft/70 shadow-[inset_0_0_0_1.5px_rgba(61,0,18,0.12)] transition focus:shadow-[inset_0_0_0_2px_var(--pink)] focus:outline-none;
   }
+
+  .chip {
+    @apply inline-flex items-center rounded-full bg-wine/[0.07] px-3 py-1 text-[0.85rem] font-medium text-wine-soft;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+:root {
+  --paper: #f5ebea;
+  --paper-dim: #e9dbda;
+  --wine: #3a0414;
+  --wine-700: #4c0a1f;
+  --wine-soft: #8a4a5c;
+  --pink: #ff8fc9;
+  --pink-light: #ffb3db;
+  --pink-soft: #d79cb6;
+}
+
+/* === Movimiento === */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .drift {
+    animation: drift 10s ease-in-out infinite;
+  }
+  @keyframes drift {
+    0%, 100% { transform: translateY(0) rotate(var(--drift-rot, -2deg)); }
+    50% { transform: translateY(-10px) rotate(var(--drift-rot, -2deg)); }
+  }
+  .photo-zoom img {
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .photo-zoom:hover img {
+    transform: scale(1.06);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .drift {
+    animation: none !important;
+  }
+}
+
+/* Cortina: el contenido se desliza hacia arriba y revela el pie de página fijo debajo.
+   --footer-h arranca en una estimación y FooterHeightSync la ajusta al alto real. */
+:root {
+  --footer-h: 760px;
+}
+@media (min-width: 640px) {
+  :root { --footer-h: 480px; }
+}
+@media (min-width: 1024px) {
+  :root { --footer-h: 380px; }
+}
+.curtain-footer {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 0;
+}
+.curtain-body {
+  position: relative;
+  z-index: 1;
+  background: var(--wine);
+}
+.curtain-spacer {
+  height: var(--footer-h);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--wine);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--wine-soft);
+  border-radius: 999px;
 }
