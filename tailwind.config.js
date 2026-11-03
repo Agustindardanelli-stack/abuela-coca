@@ -4,19 +4,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Paleta de marca: crema de panadería, marrón tostado y el rosa del logo de la abuela
-        cream: { DEFAULT: '#FBF6EE', 100: '#F6EDE0', 200: '#EADBC6' },
-        ink: { DEFAULT: '#2B1A0F', 700: '#4A3222', 500: '#76604F', 300: '#B9A795' },
-        brand: { DEFAULT: '#B4561C', dark: '#8F4113', light: '#F5E4D3' },
-        blush: { DEFAULT: '#F1C5C8', dark: '#D9939A' },
-        // Escala anterior (compatibilidad)
-        primary: {
-          50: '#fef7f0', 100: '#fdf2e7', 200: '#fbe6d1', 300: '#f8d7b5', 400: '#f4c291',
-          500: '#efad6d', 600: '#d2691e', 700: '#8b4513', 800: '#6b3410', 900: '#4a2308',
-        },
+        // Borgoña profundo (fondo de la página) + rosa chicle (el rosa del logo de la abuela)
+        // + papel hueso para las fichas impresas. Dos tintas sobre un color de papel.
+        wine: { DEFAULT: '#3a0414', 700: '#4c0a1f', soft: '#8a4a5c' },
+        pink: { DEFAULT: '#ff8fc9', light: '#ffb3db', soft: '#d79cb6' },
+        paper: { DEFAULT: '#f5ebea', dim: '#e9dbda' },
       },
       fontFamily: {
-        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-display)', 'Georgia', 'serif'],
         display: ['var(--font-display)', 'Georgia', 'serif'],
       },
       maxWidth: { site: '76rem' },

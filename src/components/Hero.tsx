@@ -2,78 +2,72 @@ import { ArrowRight, MapPin } from 'lucide-react'
 import { ADDRESS, WHATSAPP_URL } from '@/lib/site'
 import { productos } from '@/content/productos'
 
+const STATS: [string, string][] = [
+  ['Sin TACC', 'Apto celíacos'],
+  ['Sin lactosa', 'Apto APLV'],
+  [String(productos.length), 'Productos'],
+]
+
 export default function Hero() {
   return (
-    <section id="inicio" className="relative overflow-hidden">
-      <div className="container-site grid items-center gap-14 pb-20 pt-10 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:pb-28">
-        <div>
-          <p className="eyebrow">Fábrica de alimentos · Río Cuarto</p>
-          <h1 className="mt-5 text-[2.6rem] font-medium leading-[1.05] sm:text-6xl lg:text-[4.25rem]">
-            Sin gluten, sin lactosa,
-            <span className="block italic text-brand">con sabor de casa.</span>
+    <section id="inicio" className="relative bg-wine pb-24 pt-6 sm:pb-32 sm:pt-8">
+      <div className="container-site">
+        <div className="sheet scallop-bottom mx-auto max-w-3xl px-7 pt-14 sm:px-14 sm:pt-16" data-reveal>
+          <h1
+            className="text-center font-medium leading-[0.96]"
+            style={{ fontSize: 'clamp(2.75rem, 2.1rem + 3vw, 4.5rem)' }}
+          >
+            Sin gluten,
+            <span className="block italic text-wine-soft">sin lactosa.</span>
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-500 sm:text-lg">
-            Premezclas, pastelería y salados aptos para celíacos e intolerantes a la lactosa. Recetas de la abuela, hechas
-            para que toda la familia coma lo mismo.
+          <p className="mx-auto mt-6 max-w-lg text-center text-[1.05rem] leading-relaxed text-wine sm:text-[1.2rem]">
+            Premezclas, pastelería y salados con sabor de casa: las recetas de la abuela, hechas para que coma toda
+            la familia.
           </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a href="#productos" className="btn-dark !px-7 !py-3.5">
-              Ver productos <ArrowRight className="h-4 w-4" />
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center" data-reveal style={{ ['--reveal-delay' as string]: '120ms' }}>
+            <a href="#productos" className="btn-pink !px-7 !py-3.5">
+              Ver la carta <ArrowRight className="h-4 w-4" />
             </a>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-outline !px-7 !py-3.5">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn !px-7 !py-3.5 text-wine underline decoration-wine/30 underline-offset-4 hover:decoration-wine"
+            >
               Pedir por WhatsApp
             </a>
           </div>
 
-          <dl className="mt-10 grid max-w-md grid-cols-3 divide-x divide-ink/10 border-y border-ink/10 py-5 text-center">
-            {[
-              ['Sin TACC', 'Apto celíacos'],
-              ['Sin lactosa', 'Apto APLV'],
-              [String(productos.length), 'Productos'],
-            ].map(([t, d]) => (
-              <div key={t} className="px-2">
-                <dt className="whitespace-nowrap font-display text-base font-medium text-ink sm:text-xl">{t}</dt>
-                <dd className="mt-1 text-[11px] text-ink-500 sm:text-xs">{d}</dd>
+          <dl
+            className="mx-auto mt-10 flex max-w-lg items-start justify-center gap-8 text-center sm:gap-14"
+            data-reveal
+            style={{ ['--reveal-delay' as string]: '200ms' }}
+          >
+            {STATS.map(([t, d]) => (
+              <div key={t}>
+                <dt className="whitespace-nowrap font-display text-xl italic sm:text-2xl">{t}</dt>
+                <dd className="mt-1 text-[0.8125rem] text-wine-soft">{d}</dd>
               </div>
             ))}
           </dl>
 
-          <p className="mt-6 flex items-center gap-2 text-sm text-ink-500">
-            <MapPin className="h-4 w-4 text-brand" /> {ADDRESS.street}, {ADDRESS.city}
+          <p className="mt-7 flex items-center justify-center gap-2 text-[0.95rem] text-wine-soft">
+            <MapPin className="h-4 w-4 text-pink" /> {ADDRESS.street}, {ADDRESS.city}
           </p>
-        </div>
 
-        {/* Collage de productos reales */}
-        <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-          <div className="absolute -right-24 -top-16 h-80 w-80 rounded-full bg-blush/50 blur-3xl" aria-hidden="true" />
-          <div className="relative grid grid-cols-5 grid-rows-6 gap-3 sm:gap-4" style={{ aspectRatio: '1 / 1.02' }}>
-            {/* eslint-disable @next/next/no-img-element */}
-            <img
-              src="/productos/prepizza.jpg"
-              alt="Prepizza sin gluten Abuela Coca"
-              className="col-span-3 row-span-4 h-full w-full rounded-[1.75rem] object-cover shadow-xl shadow-ink/10"
-            />
-            <img
-              src="/productos/brownie.jpg"
-              alt="Brownie sin gluten y sin lactosa"
-              className="col-span-2 row-span-3 h-full w-full rounded-[1.75rem] object-cover shadow-xl shadow-ink/10"
-            />
-            <img
-              src="/productos/bizcochuelo-base.jpg"
-              alt="Premezcla para bizcochuelo Abuela Coca"
-              className="col-span-2 row-span-3 h-full w-full rounded-[1.75rem] object-cover shadow-xl shadow-ink/10"
-            />
-            <img
-              src="/productos/noquis-arroz.jpg"
-              alt="Ñoquis de arroz sin gluten"
-              className="col-span-3 row-span-2 h-full w-full rounded-[1.75rem] object-cover shadow-xl shadow-ink/10"
-            />
-            {/* eslint-enable @next/next/no-img-element */}
-          </div>
-          <div className="absolute -bottom-5 left-4 rounded-2xl bg-white px-5 py-3 shadow-lg shadow-ink/10 sm:left-8">
-            <p className="font-display text-lg italic text-ink">Hecho en Río Cuarto</p>
-            <p className="text-xs text-ink-500">Fábrica de alimentos sin TACC</p>
+          {/* La tira de productos reales, cortada por el borde festoneado de la etiqueta */}
+          <div className="mt-10 grid grid-cols-3 gap-2 sm:gap-3" data-reveal style={{ ['--reveal-delay' as string]: '280ms' }}>
+            {[
+              ['/productos/universal-5kg.jpg', 'Premezcla Universal Abuela Coca'],
+              ['/productos/bizcochuelo-chocolate.jpg', 'Premezcla Bizcochuelo de Chocolate'],
+              ['/productos/prepizza.jpg', 'Prepizza sin gluten'],
+            ].map(([src, alt]) => (
+              <div key={src} className="photo-zoom aspect-square overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={src} alt={alt} className="h-full w-full object-cover" />
+              </div>
+            ))}
           </div>
         </div>
       </div>

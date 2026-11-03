@@ -1,13 +1,21 @@
 import './globals.css'
 import type { Metadata, Viewport } from 'next'
-import { Fraunces, Inter } from 'next/font/google'
+import { Fraunces } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from '@vercel/analytics/next'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import RevealObserver from '@/components/RevealObserver'
+import FooterHeightSync from '@/components/FooterHeightSync'
 import { ADDRESS, EMAIL, INSTAGRAM_URL, SITE_URL, WHATSAPP_NUMBER } from '@/lib/site'
 
-const display = Fraunces({ subsets: ['latin'], variable: '--font-display', axes: ['opsz', 'SOFT'] })
-const sans = Inter({ subsets: ['latin'], variable: '--font-sans' })
+// Una sola tipografía para toda la página (redonda e itálica): un serif de alto
+// contraste que puede ser tanto el título de una etiqueta como el texto de una carta.
+const display = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-display',
+  axes: ['opsz', 'SOFT'],
+  style: ['normal', 'italic'],
+})
 
 const title = 'Abuela Coca - Sin Gluten y Sin Lactosa | Río Cuarto'
 const description =
@@ -46,7 +54,7 @@ export const metadata: Metadata = {
   },
 }
 
-export const viewport: Viewport = { themeColor: '#FBF6EE' }
+export const viewport: Viewport = { themeColor: '#3a0414' }
 
 const localBusiness = {
   '@context': 'https://schema.org',
@@ -73,11 +81,13 @@ const localBusiness = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es-AR" className={`scroll-smooth ${display.variable} ${sans.variable}`}>
+    <html lang="es-AR" className={`scroll-smooth ${display.variable}`}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} />
         {children}
         <WhatsAppButton />
+        <RevealObserver />
+        <FooterHeightSync />
         <Analytics />
         <SpeedInsights />
       </body>

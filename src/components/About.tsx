@@ -1,34 +1,49 @@
-import { Factory, Leaf, MilkOff, WheatOff } from 'lucide-react'
-
-const PILARES = [
-  { icon: WheatOff, title: 'Sin TACC', text: 'Productos libres de gluten, pensados para personas celíacas.' },
-  { icon: MilkOff, title: 'Sin lactosa · Apto APLV', text: 'Aptos para intolerantes a la lactosa y alérgicos a la proteína de la leche.' },
-  { icon: Leaf, title: 'Ingredientes simples', text: 'Nuestros salados no llevan colorantes, conservantes ni aditivos.' },
-  { icon: Factory, title: 'Fábrica propia', text: 'Elaboramos todo en Río Cuarto. Venta minorista y mayorista.' },
-]
+import { EMAIL } from '@/lib/site'
 
 export default function About() {
   return (
-    <section id="nosotros" className="border-y border-ink/10 bg-white">
-      <div className="container-site section grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-        <div>
-          <p className="eyebrow">Nosotros</p>
-          <h2 className="section-title">Las recetas de la abuela, para que nadie se quede afuera de la mesa.</h2>
-          <p className="lead">
-            Somos Abuela Coca, una fábrica de premezclas y alimentos libres de gluten y sin lactosa de Río Cuarto.
-            Hacemos productos caseros y ricos, para que celíacos, intolerantes y toda la familia disfruten lo mismo.
-          </p>
-        </div>
+    <section id="nosotros" className="section bg-wine">
+      <div className="container-site flex justify-center">
+        <div className="sheet scallop-bottom w-full max-w-[640px] px-7 pb-2 pt-12 sm:px-14 sm:pt-16" data-reveal>
+          <div className="mx-auto h-11 w-11 overflow-hidden rounded-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/productos/bizcochuelo-base.jpg"
+              alt="El personaje de Abuela Coca, tal como aparece en nuestros paquetes"
+              className="h-full w-full scale-[2.7] object-cover object-[46%_18%]"
+            />
+          </div>
 
-        <ul className="grid gap-x-10 gap-y-10 sm:grid-cols-2">
-          {PILARES.map(({ icon: Icon, title, text }) => (
-            <li key={title} className="border-t border-ink/15 pt-6">
-              <Icon className="h-6 w-6 text-brand" strokeWidth={1.6} />
-              <h3 className="mt-4 text-xl font-medium">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-500">{text}</p>
-            </li>
-          ))}
-        </ul>
+          <div className="mx-auto mt-8 max-w-[46ch] space-y-5 text-[1.05rem] leading-[1.6] sm:text-[1.05rem]">
+            <p>
+              Somos Abuela Coca: una fábrica chica de Río Cuarto que hace premezclas, pastelería y salados sin gluten
+              y sin lactosa, con las recetas que se cocinaban en casa de toda la vida.
+            </p>
+            <p>
+              Todo lo que sale de acá es apto para celíacos —sin TACC, certificado— y apto para intolerantes a la
+              lactosa y alérgicos a la proteína de la leche —sin lactosa, apto A.P.L.V.
+            </p>
+            <p>
+              A nuestros salados no les ponemos colorantes, conservantes ni aditivos. Son pocos ingredientes, bien
+              elegidos, para que el sabor sea el de siempre.
+            </p>
+            <p>
+              Elaboramos todo en nuestra fábrica propia de Río Cuarto, con venta minorista para la familia y
+              mayorista para dietéticas, almacenes y restaurantes.
+            </p>
+          </div>
+
+          <p className="mx-auto mt-8 max-w-[46ch] text-right font-display text-xl italic">— La familia de Abuela Coca</p>
+          <p className="mx-auto max-w-[46ch] text-right text-[0.8125rem] text-wine-soft">Río Cuarto, Córdoba</p>
+
+          <div className="mt-10 dots-row" aria-hidden="true" />
+          <a
+            href={`mailto:${EMAIL}`}
+            className="-mx-7 flex h-[4.5rem] items-center justify-center text-[0.95rem] font-medium text-wine-soft underline-offset-4 hover:text-wine hover:underline sm:-mx-14"
+          >
+            {EMAIL}
+          </a>
+        </div>
       </div>
     </section>
   )

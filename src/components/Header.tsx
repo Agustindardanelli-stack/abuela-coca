@@ -6,10 +6,9 @@ import Logo from './Logo'
 import { WHATSAPP_URL } from '@/lib/site'
 
 const NAV = [
-  { href: '#productos', label: 'Productos' },
+  { href: '#productos', label: 'La carta' },
   { href: '#nosotros', label: 'Nosotros' },
   { href: '#como-pedir', label: 'Cómo pedir' },
-  { href: '#recetas', label: 'Recetas' },
   { href: '#contacto', label: 'Contacto' },
 ]
 
@@ -27,30 +26,30 @@ export default function Header() {
   return (
     <header
       className={`sticky top-0 z-40 transition-colors duration-300 ${
-        scrolled || open ? 'border-b border-ink/10 bg-cream/95 backdrop-blur' : 'bg-cream'
+        scrolled || open ? 'bg-wine' : 'bg-transparent'
       }`}
     >
       <div className="container-site flex h-[4.5rem] items-center justify-between gap-6">
         <a href="#inicio" aria-label="Abuela Coca, inicio" onClick={() => setOpen(false)}>
-          <Logo />
+          <Logo light />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Principal">
           {NAV.map((n) => (
-            <a key={n.href} href={n.href} className="text-sm font-medium text-ink-700 transition-colors hover:text-brand">
+            <a key={n.href} href={n.href} className="text-[0.95rem] text-paper/80 transition-colors hover:text-pink">
               {n.label}
             </a>
           ))}
         </nav>
 
         <div className="flex items-center gap-2">
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-dark hidden !px-5 !py-2.5 sm:inline-flex">
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-pink hidden !px-5 !py-2.5 sm:inline-flex">
             Hacer un pedido
           </a>
           <button
             type="button"
             onClick={() => setOpen((o) => !o)}
-            className="rounded-full p-2 text-ink md:hidden"
+            className="rounded-full p-2 text-paper md:hidden"
             aria-expanded={open}
             aria-controls="menu-movil"
             aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
@@ -61,17 +60,17 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav id="menu-movil" className="border-t border-ink/10 md:hidden" aria-label="Menú">
+        <nav id="menu-movil" className="md:hidden" aria-label="Menú">
           <ul className="container-site flex flex-col py-3">
             {NAV.map((n) => (
               <li key={n.href}>
-                <a href={n.href} onClick={() => setOpen(false)} className="block py-3 font-display text-xl text-ink">
+                <a href={n.href} onClick={() => setOpen(false)} className="block py-3 font-display text-xl italic text-paper">
                   {n.label}
                 </a>
               </li>
             ))}
-            <li className="pt-3 pb-2">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-dark w-full">
+            <li className="pb-4 pt-3">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-pink w-full">
                 Hacer un pedido
               </a>
             </li>

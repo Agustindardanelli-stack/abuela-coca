@@ -1,77 +1,77 @@
-import { Clock, Instagram, Mail, MapPin, MessageCircle, Navigation } from 'lucide-react'
+import { MapPin, Navigation } from 'lucide-react'
 import ContactForm from './ContactForm'
 import { ADDRESS, EMAIL, INSTAGRAM_URL, INSTAGRAM_USER, MAPS_EMBED_URL, MAPS_URL, PHONE_DISPLAY, WHATSAPP_URL } from '@/lib/site'
 
 export default function Contact() {
   return (
-    <section id="contacto" className="section border-t border-ink/10 bg-white">
+    <section id="contacto" className="section bg-wine">
       <div className="container-site">
-        <p className="eyebrow">Contacto</p>
-        <h2 className="section-title">Escribinos</h2>
-        <p className="lead">¿Tenés una consulta o querés hacer un pedido? Te respondemos por WhatsApp.</p>
+        <div className="mx-auto max-w-2xl text-center" data-reveal>
+          <h2 className="section-title text-paper">Escribinos</h2>
+          <p className="lead mx-auto">¿Tenés una consulta o querés hacer un pedido? Te respondemos por WhatsApp.</p>
+        </div>
 
-        <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
-          <div>
-            <ul className="divide-y divide-ink/10 border-y border-ink/10">
-              <li className="flex gap-4 py-5">
-                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand" strokeWidth={1.7} />
-                <div>
-                  <p className="font-medium">{ADDRESS.street}</p>
-                  <p className="text-sm text-ink-500">
-                    {ADDRESS.city}, {ADDRESS.region} ({ADDRESS.postalCode})
-                  </p>
-                </div>
-              </li>
-              <li className="flex gap-4 py-5">
-                <Clock className="mt-0.5 h-5 w-5 shrink-0 text-brand" strokeWidth={1.7} />
-                <div className="text-sm">
-                  <p><span className="font-medium">Lunes a viernes</span> · 9:00 a 18:00</p>
-                  <p className="mt-1"><span className="font-medium">Sábados</span> · 9:00 a 13:00</p>
-                </div>
-              </li>
-              <li className="flex gap-4 py-5">
-                <MessageCircle className="mt-0.5 h-5 w-5 shrink-0 text-brand" strokeWidth={1.7} />
-                <div>
-                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-medium underline-offset-4 hover:underline">
-                    {PHONE_DISPLAY}
-                  </a>
-                  <p className="text-sm text-ink-500">Pedidos por WhatsApp</p>
-                </div>
-              </li>
-              <li className="flex gap-4 py-5">
-                <Mail className="mt-0.5 h-5 w-5 shrink-0 text-brand" strokeWidth={1.7} />
-                <a href={`mailto:${EMAIL}`} className="break-all font-medium underline-offset-4 hover:underline">
+        <div className="relative mt-12" data-reveal>
+          <div className="sheet grid overflow-hidden rounded-[1.75rem] lg:grid-cols-[1fr_1.2fr]">
+            {/* Mitad izquierda: información */}
+            <div className="px-7 py-9 sm:px-10 sm:py-10">
+              <p className="flex items-center gap-2 font-medium">
+                <MapPin className="h-5 w-5 shrink-0 text-pink" strokeWidth={1.7} /> {ADDRESS.street}
+              </p>
+              <p className="mt-0.5 pl-7 text-[0.95rem] text-wine-soft">
+                {ADDRESS.city}, {ADDRESS.region} ({ADDRESS.postalCode})
+              </p>
+
+              <p className="mt-5 text-[0.95rem] leading-relaxed text-wine-soft">
+                Atendemos <span className="font-medium text-wine">lunes a viernes de 9:00 a 18:00</span> y{' '}
+                <span className="font-medium text-wine">sábados de 9:00 a 13:00</span>. Para pedidos, consultas
+                mayoristas o lo que necesites, el canal más rápido es{' '}
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-medium text-wine underline-offset-4 hover:underline">
+                  WhatsApp ({PHONE_DISPLAY})
+                </a>
+                .
+              </p>
+
+              <p className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[0.95rem]">
+                <a href={`mailto:${EMAIL}`} className="font-medium underline-offset-4 hover:underline">
                   {EMAIL}
                 </a>
-              </li>
-              <li className="flex gap-4 py-5">
-                <Instagram className="mt-0.5 h-5 w-5 shrink-0 text-brand" strokeWidth={1.7} />
+                <span className="text-wine-soft/50" aria-hidden="true">·</span>
                 <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="font-medium underline-offset-4 hover:underline">
                   @{INSTAGRAM_USER}
                 </a>
-              </li>
-            </ul>
+              </p>
 
-            <div className="mt-8 overflow-hidden rounded-2xl border border-ink/10">
-              <iframe
-                src={MAPS_EMBED_URL}
-                className="h-64 w-full"
-                style={{ border: 0 }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title={`Ubicación de Abuela Coca: ${ADDRESS.street}, ${ADDRESS.city}`}
-              />
+              <div className="mt-7 overflow-hidden rounded-xl">
+                <iframe
+                  src={MAPS_EMBED_URL}
+                  className="h-48 w-full grayscale"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`Ubicación de Abuela Coca: ${ADDRESS.street}, ${ADDRESS.city}`}
+                />
+              </div>
+              <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-2 text-[0.95rem] font-medium text-wine hover:underline">
+                <Navigation className="h-4 w-4" /> Cómo llegar
+              </a>
             </div>
-            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:underline">
-              <Navigation className="h-4 w-4" /> Cómo llegar
-            </a>
-          </div>
 
-          <div className="rounded-3xl bg-cream p-7 sm:p-10">
-            <h3 className="text-2xl font-medium">Envianos tu consulta</h3>
-            <p className="mt-2 text-sm text-ink-500">Completá los datos y se abre WhatsApp con el mensaje listo para enviar.</p>
-            <div className="mt-8">
-              <ContactForm />
+            {/* Perforación del cupón: solo en pantallas grandes */}
+            <div className="relative hidden lg:block" aria-hidden="true">
+              <div className="absolute inset-y-6 left-0 dots-col" />
+              <span className="absolute -top-3.5 -left-3.5 h-7 w-7 rounded-full bg-wine" />
+              <span className="absolute -bottom-3.5 -left-3.5 h-7 w-7 rounded-full bg-wine" />
+            </div>
+            <div className="dots-row lg:hidden" aria-hidden="true" />
+
+            {/* Mitad derecha: formulario */}
+            <div className="bg-paper-dim px-7 py-9 sm:px-10 sm:py-10">
+              <h3 className="text-2xl font-medium">Envianos tu consulta</h3>
+              <p className="mt-1.5 text-[0.95rem] text-wine-soft">Completá los datos y se abre WhatsApp con el mensaje listo para enviar.</p>
+              <div className="mt-7">
+                <ContactForm />
+              </div>
             </div>
           </div>
         </div>

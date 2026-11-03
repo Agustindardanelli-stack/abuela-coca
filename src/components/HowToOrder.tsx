@@ -1,38 +1,52 @@
 import { Store } from 'lucide-react'
 import { whatsappUrl } from '@/lib/site'
 
-const PASOS = [
-  { n: '01', title: 'Elegí tus productos', text: 'Mirá el catálogo y anotá qué querés y en qué cantidad.' },
-  { n: '02', title: 'Escribinos por WhatsApp', text: 'Tocá “Pedir” en cada producto o mandanos tu lista completa.' },
-  { n: '03', title: 'Confirmamos y coordinamos', text: 'Te confirmamos disponibilidad, el total y cómo recibir tu pedido.' },
+const PASOS: { que: string; cuando: string }[] = [
+  { que: 'Elegís tus productos en la carta', cuando: 'un minuto' },
+  { que: 'Nos escribís por WhatsApp con tu pedido', cuando: 'al toque' },
+  { que: 'Te confirmamos el total y cómo lo recibís', cuando: 'el mismo día' },
 ]
 
 export default function HowToOrder() {
   return (
-    <section id="como-pedir" className="section bg-ink text-cream">
-      <div className="container-site">
-        <p className="eyebrow !text-blush">Cómo pedir</p>
-        <h2 className="section-title !text-cream">Hacer tu pedido es simple</h2>
+    <section id="como-pedir" className="section bg-wine">
+      <div className="container-site grid gap-12 lg:grid-cols-12 lg:gap-8">
+        <div className="lg:col-span-5" data-reveal>
+          <h2 className="section-title text-paper">Hacer tu pedido es simple</h2>
+          <p className="lead">Sin pasarela de pagos ni formularios largos: todo se resuelve en un chat de WhatsApp.</p>
+        </div>
 
-        <ol className="mt-14 grid gap-10 md:grid-cols-3 md:gap-12">
-          {PASOS.map((p) => (
-            <li key={p.n} className="border-t border-cream/20 pt-6">
-              <span className="font-display text-5xl font-light italic text-blush">{p.n}</span>
-              <h3 className="mt-4 text-2xl font-medium !text-cream">{p.title}</h3>
-              <p className="mt-2 leading-relaxed text-cream/70">{p.text}</p>
-            </li>
-          ))}
-        </ol>
+        <div className="lg:col-span-6 lg:col-start-7" data-reveal style={{ ['--reveal-delay' as string]: '120ms' }}>
+          <div className="sheet zigzag-bottom px-7 pb-10 pt-8 sm:px-10 sm:pt-10">
+            <ul className="space-y-5">
+              {PASOS.map((s) => (
+                <li key={s.que} className="flex items-baseline gap-3">
+                  <span className="flex-1 text-[1.05rem]">{s.que}</span>
+                  <span className="menu-leader" aria-hidden="true" />
+                  <span className="shrink-0 text-[0.8125rem] italic text-wine-soft">{s.cuando}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="-mt-1 bg-wine-700 px-7 py-4 text-center text-[0.95rem] font-medium text-paper sm:px-10">
+            Tu pedido, confirmado y listo para retirar o coordinar el envío.
+          </div>
+        </div>
 
-        {/* Mayoristas */}
-        <div className="mt-20 flex flex-col items-start justify-between gap-6 rounded-3xl bg-cream/[0.06] p-8 ring-1 ring-cream/10 sm:p-10 md:flex-row md:items-center">
+        <div className="sheet mt-2 flex flex-col items-start gap-6 px-7 py-8 sm:px-10 sm:py-9 lg:col-span-12 lg:flex-row lg:items-center lg:justify-between" data-reveal>
           <div className="flex gap-5">
-            <Store className="mt-1 h-7 w-7 shrink-0 text-blush" strokeWidth={1.6} />
+            <div className="photo-zoom hidden h-24 w-24 shrink-0 overflow-hidden rounded-xl sm:block">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/productos/universal-5kg.jpg" alt="Premezcla Universal Abuela Coca, presentación de 5 kg" className="h-full w-full object-cover" />
+            </div>
             <div>
-              <h3 className="text-2xl font-medium !text-cream">¿Tenés una dietética, almacén o restaurante?</h3>
-              <p className="mt-2 max-w-xl text-cream/70">
-                Hacemos ventas mayoristas, con presentaciones como la Premezcla Universal de 5 kg. Consultanos por precios para
-                comercios.
+              <h3 className="flex items-center gap-2 text-xl font-medium">
+                <Store className="h-5 w-5 shrink-0 text-wine-soft sm:hidden" strokeWidth={1.6} />
+                ¿Tenés una dietética, almacén o restaurante?
+              </h3>
+              <p className="mt-1.5 max-w-xl text-[0.95rem] text-wine-soft">
+                Hacemos ventas mayoristas, con presentaciones como la Premezcla Universal de 5 kg. Consultanos por
+                precios para comercios.
               </p>
             </div>
           </div>
@@ -40,7 +54,7 @@ export default function HowToOrder() {
             href={whatsappUrl('¡Hola Abuela Coca! Tengo un comercio y quiero consultar precios mayoristas.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn shrink-0 bg-cream text-ink hover:bg-white"
+            className="btn-pink w-full shrink-0 lg:w-auto"
           >
             Consultar precios mayoristas
           </a>
