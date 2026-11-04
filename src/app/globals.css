@@ -75,29 +75,30 @@
     @apply bg-paper text-wine;
   }
 
-  /* Borde festoneado (como el troquel de una etiqueta) hecho con máscara radial repetida */
+  /* Borde festoneado (como el troquel de una etiqueta): una capa dibuja las ondas en el
+     borde y la otra deja visible el resto de la tarjeta (sin ella, la tarjeta queda invisible). */
   .scallop-bottom {
     --scallop: 22px;
-    mask-image: radial-gradient(circle at 50% 0, transparent calc(var(--scallop) - 1px), #000 var(--scallop));
-    mask-size: calc(var(--scallop) * 2) calc(var(--scallop) * 2);
-    mask-repeat: repeat-x;
-    mask-position: bottom center;
-    -webkit-mask-image: radial-gradient(circle at 50% 0, transparent calc(var(--scallop) - 1px), #000 var(--scallop));
-    -webkit-mask-size: calc(var(--scallop) * 2) calc(var(--scallop) * 2);
-    -webkit-mask-repeat: repeat-x;
-    -webkit-mask-position: bottom center;
+    mask-image: radial-gradient(circle at 50% 0, transparent calc(var(--scallop) - 1px), #000 var(--scallop)), linear-gradient(#000, #000);
+    mask-size: calc(var(--scallop) * 2) calc(var(--scallop) * 2), 100% calc(100% - var(--scallop) * 2 + 1px);
+    mask-repeat: repeat-x, no-repeat;
+    mask-position: bottom center, top center;
+    -webkit-mask-image: radial-gradient(circle at 50% 0, transparent calc(var(--scallop) - 1px), #000 var(--scallop)), linear-gradient(#000, #000);
+    -webkit-mask-size: calc(var(--scallop) * 2) calc(var(--scallop) * 2), 100% calc(100% - var(--scallop) * 2 + 1px);
+    -webkit-mask-repeat: repeat-x, no-repeat;
+    -webkit-mask-position: bottom center, top center;
     padding-bottom: calc(var(--scallop) * 0.9);
   }
   .scallop-top {
     --scallop: 18px;
-    mask-image: radial-gradient(circle at 50% 100%, transparent calc(var(--scallop) - 1px), #000 var(--scallop));
-    mask-size: calc(var(--scallop) * 2) calc(var(--scallop) * 2);
-    mask-repeat: repeat-x;
-    mask-position: top center;
-    -webkit-mask-image: radial-gradient(circle at 50% 100%, transparent calc(var(--scallop) - 1px), #000 var(--scallop));
-    -webkit-mask-size: calc(var(--scallop) * 2) calc(var(--scallop) * 2);
-    -webkit-mask-repeat: repeat-x;
-    -webkit-mask-position: top center;
+    mask-image: radial-gradient(circle at 50% 100%, transparent calc(var(--scallop) - 1px), #000 var(--scallop)), linear-gradient(#000, #000);
+    mask-size: calc(var(--scallop) * 2) calc(var(--scallop) * 2), 100% calc(100% - var(--scallop) * 2 + 1px);
+    mask-repeat: repeat-x, no-repeat;
+    mask-position: top center, bottom center;
+    -webkit-mask-image: radial-gradient(circle at 50% 100%, transparent calc(var(--scallop) - 1px), #000 var(--scallop)), linear-gradient(#000, #000);
+    -webkit-mask-size: calc(var(--scallop) * 2) calc(var(--scallop) * 2), 100% calc(100% - var(--scallop) * 2 + 1px);
+    -webkit-mask-repeat: repeat-x, no-repeat;
+    -webkit-mask-position: top center, bottom center;
     padding-top: calc(var(--scallop) * 0.9);
   }
 
